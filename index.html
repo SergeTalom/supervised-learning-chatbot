@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Supervised Learning Tutor Bot</title>
+
+  <script
+    src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"
+    async>
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #eef4ff, #f8fbff);
+      color: #1f2937;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero {
+      padding: 56px 24px 28px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      margin: 0 0 14px;
+      font-size: 2.2rem;
+      color: #0f172a;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #475569;
+    }
+
+    .content {
+      width: min(1100px, 92%);
+      margin: 0 auto 48px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      border: 1px solid #e5e7eb;
+    }
+
+    .card h2 {
+      margin-top: 0;
+      margin-bottom: 14px;
+      font-size: 1.25rem;
+      color: #111827;
+    }
+
+    .card p {
+      margin-top: 0;
+      line-height: 1.7;
+      color: #4b5563;
+    }
+
+    .list {
+      margin: 0;
+      padding-left: 18px;
+      color: #374151;
+      line-height: 1.8;
+    }
+
+    .pill-row {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill {
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      font-size: 0.92rem;
+      border: 1px solid #bfdbfe;
+    }
+
+    .footer-note {
+      margin-top: 16px;
+      font-size: 0.92rem;
+      color: #64748b;
+    }
+
+    df-messenger {
+      --df-messenger-bot-message: #eff6ff;
+      --df-messenger-button-titlebar-color: #2563eb;
+      --df-messenger-chat-background-color: #ffffff;
+      --df-messenger-font-color: #111827;
+      --df-messenger-send-icon: #2563eb;
+      --df-messenger-user-message: #dbeafe;
+    }
+
+    @media (max-width: 900px) {
+      .content {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <section class="hero">
+      <h1>Supervised Learning Tutor Bot</h1>
+      <p>
+        This chatbot guides users through key supervised learning concepts such as
+        labels, features, classification, regression, data splitting, evaluation metrics,
+        and common issues like overfitting and underfitting.
+      </p>
+    </section>
+
+    <main class="content">
+      <section class="card">
+        <h2>What this bot can do</h2>
+        <p>
+          The bot is designed as an interactive tutor. It can both guide the user
+          through a supervised learning workflow and answer side questions during the conversation.
+        </p>
+
+        <ul class="list">
+          <li>Explain supervised learning concepts in simple language</li>
+          <li>Guide the user from label identification to model evaluation</li>
+          <li>Suggest models for classification and regression tasks</li>
+          <li>Explain metrics like accuracy, precision, recall, F1-score, MAE, MSE, and RMSE</li>
+          <li>Diagnose issues such as overfitting and underfitting</li>
+        </ul>
+
+        <div class="pill-row">
+          <span class="pill">Labels</span>
+          <span class="pill">Features</span>
+          <span class="pill">Classification</span>
+          <span class="pill">Regression</span>
+          <span class="pill">Train/Test Split</span>
+          <span class="pill">Metrics</span>
+          <span class="pill">Overfitting</span>
+          <span class="pill">Underfitting</span>
+        </div>
+
+        <p class="footer-note">
+          Try questions like:
+          “What is a label?”,
+          “Explain regression”,
+          “How do I evaluate my model?”,
+          or
+          “My training accuracy is high but test accuracy is low.”
+        </p>
+      </section>
+
+      <aside class="card">
+        <h2>How to use it</h2>
+        <p>
+          Open the chat widget in the bottom-right corner and start a conversation.
+          You can either ask direct conceptual questions or let the bot guide you step by step.
+        </p>
+
+        <ul class="list">
+          <li>Start with: <strong>I want to learn supervised learning</strong></li>
+          <li>Ask side questions anytime during the tutoring flow</li>
+          <li>Continue naturally after each explanation</li>
+        </ul>
+      </aside>
+    </main>
+  </div>
+
+  <df-messenger
+    intent="WELCOME"
+    chat-title="Supervised Learning Tutor Bot"
+    agent-id="7e64d750-dca3-4ab0-9b10-1c776ec58796"
+    language-code="en">
+  </df-messenger>
+</body>
+</html>
